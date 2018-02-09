@@ -1,0 +1,37 @@
+<head>
+  <title>hotel</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+  {{> cadastroHotel}}
+  {{> listarHotel}}
+  
+</body>
+
+<template name="cadastroHotel">
+  
+  Nome <input type="text" id="nomeHotel"/><br>
+  Imagem <input type="text" id="imagemHotel" /><br>
+  Descrição <textarea id="descricaoHotel"></textarea><br>
+  <input type="hidden" id="idHotel"/>
+  <button>Cadastrar</button>
+    
+</template>
+
+<template name="listarHotel">
+
+  <div>
+    {{#each hoteis}}
+    <p>
+      {{ nome }}
+      <button class="remove" data-index="{{ @index }}">X</button>
+      <button class="edit" data-index="{{ @index }}">Edit</button>
+    </p>
+    {{/each}}
+  </div>
+
+</template>
+
+
